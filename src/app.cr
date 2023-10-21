@@ -1,7 +1,7 @@
 require "kemal"
 
 get "/" do
-  "Hello World!"
+  "Hello Pradhyuman!"
 end
 
 # Define a route that accepts input as a parameter
