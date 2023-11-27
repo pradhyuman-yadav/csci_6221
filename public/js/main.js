@@ -36,57 +36,57 @@ function getWeather() {
         redirect: 'follow'
     };
 
-    if(option === 'currentWeather') {
-    	fetch("http://localhost:3000/weather", requestOptions)
-        .then(response => response.json())
-        .then(data => {
-            displayWeather(data);
-        })
-        .catch(error => {
-            displayAlert("Error fetching weather data.");
-        });
-    } else if(option === 'forecast'){
-    	urlencoded.append("date", date);
-    	fetch("http://localhost:3000/forecast", requestOptions)
-        .then(response => response.json())
-        .then(data => {
-            displayForcast(data);
-        })
-        .catch(error => {
-            displayAlert("Error fetching weather data.");
-        });
-    } else if(option === 'future'){
-    	urlencoded.append("date", date);
-    	fetch("http://localhost:3000/future", requestOptions)
-        .then(response => response.json())
-        .then(data => {
-            displayFuture(data);
-        })
-        .catch(error => {
-            displayAlert("Error fetching weather data.");
-        });
-    } else if(option === 'historic'){
-    	urlencoded.append("date", date);
-    	fetch("http://localhost:3000/history", requestOptions)
-        .then(response => response.json())
-        .then(data => {
-            displayForcast(data);
-        })
-        .catch(error => {
-            displayAlert("Error fetching weather data.");
-        });
-    } else if(option === 'marine'){
-    	urlencoded.append("date", date);
-    	fetch("http://localhost:3000/sail", requestOptions)
-        .then(response => response.json())
-        .then(data => {
-            displayForcast(data);
-        })
-        .catch(error => {
-            displayAlert("Error fetching weather data.");
-        });
+    if (option === 'currentWeather') {
+        fetch("http://localhost:3000/weather", requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                displayWeather(data);
+            })
+            .catch(error => {
+                displayAlert("Error fetching weather data.");
+            });
+    } else if (option === 'forecast') {
+        urlencoded.append("date", date);
+        fetch("http://localhost:3000/forecast", requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                displayForcast(data);
+            })
+            .catch(error => {
+                displayAlert("Error fetching weather data.");
+            });
+    } else if (option === 'future') {
+        urlencoded.append("date", date);
+        fetch("http://localhost:3000/future", requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                displayFuture(data);
+            })
+            .catch(error => {
+                displayAlert("Error fetching weather data.");
+            });
+    } else if (option === 'historic') {
+        urlencoded.append("date", date);
+        fetch("http://localhost:3000/history", requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                displayHistoric(data);
+            })
+            .catch(error => {
+                displayAlert("Error fetching weather data.");
+            });
+    } else if (option === 'marine') {
+        urlencoded.append("date", date);
+        fetch("http://localhost:3000/sail", requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                displayMarine(data);
+            })
+            .catch(error => {
+                displayAlert("Error fetching weather data.");
+            });
     }
-    
+
 
     map.setView([latitude, longitude], 13);
 }
@@ -98,6 +98,12 @@ function displayForcast(weatherData) {
     const rightPanel2 = document.getElementById("right-panel2");
     const leftPanel3 = document.getElementById("left-panel3");
     const rightPanel3 = document.getElementById("right-panel3");
+    leftPanel1.style.display = "block";
+    rightPanel1.style.display = "block";
+    leftPanel2.style.display = "block";
+    rightPanel2.style.display = "block";
+    leftPanel3.style.display = "block";
+    rightPanel3.style.display = "block";
 
     leftPanel1.innerHTML = `
     <h2>${weatherData.location.name}, ${weatherData.location.country}</h2>
@@ -132,12 +138,18 @@ function displayForcast(weatherData) {
 }
 
 function displayFuture(weatherData) {
-	const leftPanel1 = document.getElementById("left-panel1");
+    const leftPanel1 = document.getElementById("left-panel1");
     const rightPanel1 = document.getElementById("right-panel1");
     const leftPanel2 = document.getElementById("left-panel2");
     const rightPanel2 = document.getElementById("right-panel2");
     const leftPanel3 = document.getElementById("left-panel3");
     const rightPanel3 = document.getElementById("right-panel3");
+    leftPanel1.style.display = "block";
+    rightPanel1.style.display = "block";
+    leftPanel2.style.display = "block";
+    rightPanel2.style.display = "block";
+    leftPanel3.style.display = "block";
+    rightPanel3.style.display = "block";
 
     leftPanel1.innerHTML = `
     <h2>${weatherData.location.name}, ${weatherData.location.country}</h2>
@@ -172,12 +184,18 @@ function displayFuture(weatherData) {
 }
 
 function displayHistoric(weatherData) {
-	const leftPanel1 = document.getElementById("left-panel1");
+    const leftPanel1 = document.getElementById("left-panel1");
     const rightPanel1 = document.getElementById("right-panel1");
     const leftPanel2 = document.getElementById("left-panel2");
     const rightPanel2 = document.getElementById("right-panel2");
     const leftPanel3 = document.getElementById("left-panel3");
     const rightPanel3 = document.getElementById("right-panel3");
+    leftPanel1.style.display = "block";
+    rightPanel1.style.display = "block";
+    leftPanel2.style.display = "block";
+    rightPanel2.style.display = "block";
+    leftPanel3.style.display = "block";
+    rightPanel3.style.display = "block";
 
     leftPanel1.innerHTML = `
     <h2>${weatherData.location.name}, ${weatherData.location.country}</h2>
@@ -212,7 +230,47 @@ function displayHistoric(weatherData) {
 }
 
 function displayMarine(weatherData) {
+    const leftPanel1 = document.getElementById("left-panel1");
+    const rightPanel1 = document.getElementById("right-panel1");
+    const leftPanel2 = document.getElementById("left-panel2");
+    const rightPanel2 = document.getElementById("right-panel2");
+    const leftPanel3 = document.getElementById("left-panel3");
+    const rightPanel3 = document.getElementById("right-panel3");
+    leftPanel1.style.display = "block";
+    rightPanel1.style.display = "block";
+    leftPanel2.style.display = "block";
+    rightPanel2.style.display = "block";
+    leftPanel3.style.display = "block";
+    rightPanel3.style.display = "block";
 
+    leftPanel1.innerHTML = `
+    <h2>${weatherData.location.name}, ${weatherData.location.country}</h2>
+    <p>Local Date & Time: ${weatherData.location.localtime}</p>
+    <p>Max Temp: ${weatherData.forecast.forecastday[0].day.maxtemp_c} &deg;C Min Temp: ${weatherData.forecast.forecastday[0].day.mintemp_c} &deg;C</p>
+    <p>Weather: ${weatherData.forecast.forecastday[0].day.condition.text}</p>
+    <p>Ultravoilet: ${weatherData.forecast.forecastday[0].day.uv}</p>
+  `;
+
+    rightPanel1.innerHTML = `<div>
+    <h2>Future: ${weatherData.forecast.forecastday[0].date}</h2>
+    <img src="${weatherData.forecast.forecastday[0].day.condition.icon}" />
+    </div>`;
+
+    leftPanel2.innerHTML = `
+    <h2>Wind, Precipitation & Visibilty</h2>
+    <p>Wind: ${weatherData.forecast.forecastday[0].day.maxwind_kph} kph / ${weatherData.forecast.forecastday[0].day.maxwind_mph} mph</p>
+    <p>Precipitation: ${weatherData.forecast.forecastday[0].day.totalprecip_mm} mm / ${weatherData.forecast.forecastday[0].day.totalprecip_in} in</p>
+    <p>Visibilty: ${weatherData.forecast.forecastday[0].day.avgvis_km} KM / ${weatherData.forecast.forecastday[0].day.avgvis_miles} mil</p>
+    <p>Humidity: ${weatherData.forecast.forecastday[0].day.avghumidity}</p>
+    `;
+
+    rightPanel2.innerHTML = `
+    <h2>Astro</h2>
+    <p>Sunrise: ${weatherData.forecast.forecastday[0].astro.sunrise}</p>
+    <p>Sunset: ${weatherData.forecast.forecastday[0].astro.sunset}</p>
+    <p>Moonrise: ${weatherData.forecast.forecastday[0].astro.moonrise}</p>
+    <p>Moonset: ${weatherData.forecast.forecastday[0].astro.moonset}</p>
+    `;
 }
 
 function displayWeather(weatherData) {
@@ -222,6 +280,12 @@ function displayWeather(weatherData) {
     const rightPanel2 = document.getElementById("right-panel2");
     const leftPanel3 = document.getElementById("left-panel3");
     const rightPanel3 = document.getElementById("right-panel3");
+    leftPanel1.style.display = "block";
+    rightPanel1.style.display = "block";
+    leftPanel2.style.display = "block";
+    rightPanel2.style.display = "block";
+    leftPanel3.style.display = "block";
+    rightPanel3.style.display = "block";
 
 
     leftPanel1.innerHTML = `

@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Fira Sans', sans-serif;
     background-color: white;
@@ -7,8 +6,8 @@ body {
 }
 
 .dark-mode {
-  background-color: black;
-  color: white;
+    background-color: black;
+    color: white;
 }
 
 .weather-container {
@@ -33,6 +32,7 @@ body {
 }
 
 .panels {
+    display: none;
     height: 200px;
     /*    width: 50%;*/
 }
@@ -125,16 +125,39 @@ input:checked+.slider:before {
 }
 
 
-#right-panel1 {position:relative; text-align:center; overflow:hidden;}
-#right-panel1: img {position:absolute; left:50%; margin-left:-250px}
-
-#start: label {
-  display: block;
-  font:
-    1rem 'Fira Sans',
-    sans-serif;
+#right-panel1 {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
 }
 
-#start: input,label {
-  margin: 0.4rem 0;
+#right-panel1: img {
+    position: absolute;
+    left: 50%;
+    margin-left: -250px
+}
+
+#start: label {
+    display: block;
+    font:
+        1rem 'Fira Sans',
+        sans-serif;
+}
+
+#start: input,
+label {
+    margin: 0.4rem 0;
+}
+
+#leftAlign {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+}
+
+#imgDiv {
+    width: 50px;
+    max-width: 100%;
+    max-height: 100%;
 }
