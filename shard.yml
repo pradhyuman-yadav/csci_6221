@@ -1,0 +1,18 @@
+name: my_api_server
+version: 0.1.0
+
+authors:
+  - Yadav, Pradhyuman <pradhyuman.yadav@gwu.edu>
+
+targets:
+  my_api_server:
+    main: src/my_api_server.cr
+
+crystal: '>= 1.10.1'
+
+license: MIT
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+
